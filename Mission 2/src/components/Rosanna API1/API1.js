@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
+
 const app = express();
 const PORT = 3001;
 
 // Middleware to parse JSON request body
 app.use(express.json());
-
+app.use(cors());
 // Helper function to calculate car value
 export function calculateCarValue(model, year) {
   // Ensure year is a valid number
