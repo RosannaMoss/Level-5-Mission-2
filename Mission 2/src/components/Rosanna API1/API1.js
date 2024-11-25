@@ -1,5 +1,4 @@
-// api.js
-const express = require("express");
+import express from "express";
 const app = express();
 const PORT = 3001;
 
@@ -7,7 +6,7 @@ const PORT = 3001;
 app.use(express.json());
 
 // Helper function to calculate car value
-function calculateCarValue(model, year) {
+export function calculateCarValue(model, year) {
   // Ensure year is a valid number
   if (isNaN(year) || year <= 0 || typeof year !== "number") {
     return { error: "Invalid year provided" };
@@ -61,5 +60,3 @@ app.post("/api/calculateCarValue", (req, res) => {
 app.listen(PORT, () => {
   console.log(`API is running on http://localhost:${PORT}`);
 });
-
-module.exports = { calculateCarValue };
