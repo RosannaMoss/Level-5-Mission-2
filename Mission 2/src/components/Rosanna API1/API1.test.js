@@ -26,7 +26,7 @@ describe("Car Value API Unit Tests", () => {
   });
 
   // Test case 5: Invalid year (too large)
-  it("should return an error for a year larger than 2024 ('Honda', 4000)", () => {
+  it("should return an error for a year larger than 2025 ('Honda', 4000)", () => {
     const result = calculateCarValue("Honda", 4000);
     expect(result).toEqual({ error: "Invalid year provided" });
   });

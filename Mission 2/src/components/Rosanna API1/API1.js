@@ -15,7 +15,7 @@ export function calculateCarValue(model, year) {
   }
 
   // Ensure year is not greater than 2024
-  if (year > 2024) {
+  if (year > 2025) {
     return { error: "Invalid year provided" };
   }
 
