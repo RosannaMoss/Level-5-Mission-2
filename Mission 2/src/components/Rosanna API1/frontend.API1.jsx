@@ -28,31 +28,36 @@ const frontendAPI1 = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.API1Container}>
       <h1 className={styles.cardTitle}>Car Value Calculator</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
+
+      <form className={styles.API1Form} onSubmit={handleSubmit}>
+        <label className={styles.API1Label}>
           Model:
           <br></br>
           <input
+            className={styles.API1Input}
             type="text"
             value={model}
             onChange={(e) => setModel(e.target.value)}
           />
         </label>
-        <label>
+        <label className={styles.API1Label}>
           Year:
           <br></br>
           <input
+            className={styles.API1Input}
             type="text"
             value={year}
             onChange={(e) => setYear(e.target.value)}
           />
         </label>
-        <button type="submit">Calculate</button>
+        <button className={styles.API1Button} type="submit">
+          Calculate
+        </button>
       </form>
       {result && <p className={styles.result}>Suggested Car Value: {result}</p>}
-      {error && <p className="error">{error}</p>}
+      {error && <p className={styles.API1error}>{error}</p>}
     </div>
   );
 };
