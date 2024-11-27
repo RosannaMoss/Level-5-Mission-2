@@ -40,7 +40,7 @@ export function calculateCarValue(model, year) {
 }
 
 // API endpoint
-app.post("/api/calculateCarValue", (req, res) => {
+app.post("/calculateCarValue", (req, res) => {
   const { model, year } = req.body;
 
   // if no input:

@@ -1,6 +1,6 @@
 import "./App.css";
-import Frontend from "./components/Rosanna API1/frontend.API1";
-import HeaderAPI1 from "./components/Rosanna API1/Header.jsx";
+import Frontend from "./components/Rosanna API1/client/frontend.API1.jsx";
+import HeaderAPI1 from "./components/Rosanna API1/client/Header.jsx";
 
 function App() {
   return (
