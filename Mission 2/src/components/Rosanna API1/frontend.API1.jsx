@@ -19,9 +19,29 @@ const frontendAPI1 = () => {
         {
           model,
           year: parseInt(year, 10), // Ensure year is a number
+          /* EXPLANATION
+          The 10 in the parseInt(year, 10) is specifying the radix, which is the base of the number system to be used for parsing 
+          the year string into an integer.
+
+Here’s how it works:
+
+parseInt(string, radix) is a JavaScript function that converts a string to an integer.
+The radix argument tells parseInt which number base to use for the conversion.
+A radix of 10 means base-10, which is the standard decimal numbering system (the one we commonly use).
+Without the radix, the behavior of parseInt can be unpredictable. For example:
+If the string starts with 0x, it will be parsed as a hexadecimal (base-16) number.
+Strings starting with 0 (in some older JavaScript environments) might be parsed as octal (base-8).
+In your code, parseInt(year, 10) ensures that the year is interpreted as a decimal integer, avoiding any unexpected behavior. For example:
+
+parseInt("2024", 10); // Returns 2024
+parseInt("2024", 8);  // Returns 1044 (interprets "2024" as base-8)
+This makes the code more robust, especially when dealing with user input or unpredictable data formats.
+
+          */
         }
       );
       setResult(response.data.car_value);
+      // car_value referencing the API value
     } catch (err) {
       setError(err.response?.data?.error || "There was an error");
     }
