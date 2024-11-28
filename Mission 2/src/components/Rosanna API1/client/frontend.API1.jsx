@@ -15,7 +15,7 @@ const frontendAPI1 = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/calculateCarValue",
+        "http://localhost:3001/calculateCarValue",
         {
           model,
           year: parseInt(year, 10), // Ensure year is a number
